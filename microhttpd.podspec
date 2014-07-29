@@ -21,14 +21,14 @@ GNU Libmicrohttpd was started because the author needed an easy way to add a con
 GNU libmicrohttpd is a GNU package. Our official GNU website can be found at http://www.gnu.org/software/libmicrohttpd/.
                    DESC
   s.homepage     = "https://www.gnu.org/software/libmicrohttpd/"
-  s.screenshots  = 
   s.license      = 'LGPL'
   s.author       = { "waTeim" => "truthset@gmail.com" }
   s.source       = { :git => "https://github.com/waTeim/microhttpd.git", :tag => s.version.to_s }
-
   s.platform     = :osx, '10.6'
   s.requires_arc = false
   s.vendored_libraries = 'lib/*.a'
-  s.source_files = s.public_header_files = 'include/*.h'
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/microhttpd/include"' }
+  s.private_header_files = s.source_files =
+    'include/*.h'
   s.header_mappings_dir = 'include'
 end
